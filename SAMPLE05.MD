@@ -214,15 +214,10 @@
 ## 6. 参考文献とリソース
 
 ### 6.1 主要な研究論文
-- Brown, T. B., et al. (2020). "Language Models are Few-Shot Learners." arXiv preprint arXiv:2005.14165.
-- Radford, A., et al. (2019). "Language Models are Unsupervised Multitask Learners." OpenAI.
 
 ### 6.2 オンラインリソース
-- OpenAIの公式ウェブサイト: [OpenAI](https://www.openai.com)
-- Hugging Faceのモデルライブラリ: [Hugging Face](https://huggingface.co/models)
 
 ### 6.3 コミュニティとフォーラム
-- AI関連のフォーラムやコミュニティ（例: Redditのr/MachineLearning、Stack Overflowなど）での情報交換やディスカッションが有益です。
 
 ---
 
