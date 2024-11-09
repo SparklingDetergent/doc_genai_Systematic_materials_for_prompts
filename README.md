@@ -1,0 +1,2 @@
+# doc_genai_Systematic_materials_for_prompts
+プロンプトの体系的な資料
