@@ -1785,6 +1785,131 @@ Write-Output $missingValue
 
 
 
+
+### 🟡 タスク実行プロンプト: コード生成の指示
+#### プロンプトテンプレート
+````markdown
+以下の要件でプログラムコードを作成してください：
+要件：
+1. （使用するプログラミング言語）
+2. （使用するライブラリ/フレームワーク）
+3. （コードの機能要件）
+4. （出力形式や保存先の指定）
+5. （追加の仕様や注意事項）
+````
+
+<details>
+  <summary>生成結果</summary>
+
+````markdown
+
+🌸😊You:  
+以下の要件でプログラムコードを作成してください：  
+要件：  
+1. Python3でWebスクレイピングスクリプトを作成  
+2. BeautifulSoupを使用  
+3. エラー処理を含める  
+4. データをCSVに保存  
+5. 実行ログを出力  
+
+🚀🤖Copilot:  
+以下は指定された要件に基づいたPythonコードです。
+
+```python
+import requests
+from bs4 import BeautifulSoup
+import csv
+import logging
+
+# ログの設定
+logging.basicConfig(level=logging.INFO, filename='script.log', filemode='w', 
+                    format='%(asctime)s - %(levelname)s - %(message)s')
+
+def scrape_website(url):
+    try:
+        # HTTPリクエストを送信
+        response = requests.get(url)
+        response.raise_for_status()  # HTTPエラーが発生した場合に例外をスロー
+
+        # BeautifulSoupでHTMLを解析
+        soup = BeautifulSoup(response.text, 'html.parser')
+
+        # 必要なデータを抽出（例: タイトルとリンク）
+        data = []
+        for item in soup.find_all('a'):
+            title = item.text.strip()
+            link = item.get('href')
+            data.append({'title': title, 'link': link})
+
+        return data
+
+    except Exception as e:
+        logging.error(f"エラーが発生しました: {e}")
+        return []
+
+def save_to_csv(data, filename):
+    try:
+        with open(filename, mode='w', newline='', encoding='utf-8') as file:
+            writer = csv.DictWriter(file, fieldnames=['title', 'link'])
+            writer.writeheader()
+            writer.writerows(data)
+        logging.info("データをCSVに保存しました。")
+    except Exception as e:
+        logging.error(f"CSVの保存中にエラーが発生しました: {e}")
+
+if __name__ == "__main__":
+    url = "https://example.com"
+    logging.info(f"URL: {url} のデータをスクレイピング中...")
+    scraped_data = scrape_website(url)
+    save_to_csv(scraped_data, 'output.csv')
+    logging.info("スクリプトが正常に終了しました。")
+```
+
+このスクリプトは以下の要件を満たしています：
+1. **Python3**で作成されています。
+2. **BeautifulSoup**を用いたHTML解析。
+3. **エラー処理**（例外ハンドリングとログ記録）を実装。
+4. データを**CSV**形式で保存。
+5. **ログ**に実行過程を出力。
+
+必要に応じてご自由にカスタマイズしてください。
+
+````
+
+</details>
+<details>
+  <summary>テンプレート説明</summary>
+
+````markdown
+--------------------------------------------------------------------------------------------------------------------
+# 目的
+  - プログラムコード生成のための具体的な指示を出す
+# 使用シーン
+  - コーディングタスクを効率化したい場合
+  - 明確な要件をもとにコードを生成したいとき
+# 期待される効果
+  - 要件に基づいた適切なコードが得られる
+  - ライブラリやフォーマットの指定による正確性の向上
+# キーワード
+  - **プログラミング言語指定** … 使用する言語を明示する。
+  - **ライブラリ/フレームワーク指定** … コードで使用する主要なツールを指定。
+  - **出力形式** … 生成されたデータの保存形式や処理の詳細を指定。
+# 詳細な説明
+  - 各要件を具体的かつ簡潔に記述することでAIが的確に生成できます。
+  - 必要に応じてカスタマイズ可能な点が大きな特徴です。
+# カスタマイズのポイント
+  - 例：「エラー処理を含める」の代わりに「APIレスポンスの例外処理を実装」などの詳細を追加。
+# 注意事項
+  - 必要な要件が曖昧だと、期待通りのコードが生成されにくい可能性があります。
+--------------------------------------------------------------------------------------------------------------------
+````
+
+</details>
+
+#### タグ
+`#プログラムコード生成` `#要件指定` `#Python3`
+
+---
 <br/><br/> <br/><br/>
 
 
