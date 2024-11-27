@@ -226,6 +226,138 @@ process_json(input_file, output_file)
 ````
 
 </details>
+<details>  
+  <summary>プロンプトテンプレート活用事例集</summary>
+
+### 活用事例１ . . . コード生成タスク
+````markdown
+<request>
+  <language>Python</language>
+  <task>ファイル操作プログラムの作成</task>
+  <details>
+    <description>指定されたディレクトリ内のすべてのテキストファイルを読み取り、内容を1つのファイルに統合するPythonプログラムを作成してください。</description>
+    <constraints>
+      <constraint>標準ライブラリのみを使用すること</constraint>
+      <constraint>例外処理を実装すること</constraint>
+    </constraints>
+    <outputFormat>Pythonコード</outputFormat>
+  </details>
+</request>
+````
+
+### 活用事例２ . . . ドキュメント生成タスク
+````markdown
+<request>
+  <language>Markdown</language>
+  <task>マニュアルの概要作成</task>
+  <details>
+    <description>プロジェクト管理ツールの利用方法を簡潔に説明するMarkdown形式のマニュアルを作成してください。</description>
+    <constraints>
+      <constraint>見出し構造（H1, H2, H3）を適切に使用すること</constraint>
+      <constraint>サンプル画像やリンクを含めること</constraint>
+    </constraints>
+    <outputFormat>Markdownテキスト</outputFormat>
+  </details>
+</request>
+````
+
+### 活用事例３ . . . データ変換タスク
+````markdown
+<request>
+  <language>SQL</language>
+  <task>データの集計クエリ作成</task>
+  <details>
+    <description>データベース内の売上データを月ごとに集計し、最高売上月を特定するSQLクエリを作成してください。</description>
+    <constraints>
+      <constraint>ANSI SQLに準拠すること</constraint>
+      <constraint>エラーハンドリングを考慮すること</constraint>
+    </constraints>
+    <outputFormat>SQLクエリ</outputFormat>
+  </details>
+</request>
+````
+
+### 活用事例４ . . . レポート生成タスク
+````markdown
+<request>
+  <language>English</language>
+  <task>レポートの要約作成</task>
+  <details>
+    <description>提供されたレポート内容を300ワード以内で要約し、簡潔に伝わる形で記述してください。</description>
+    <constraints>
+      <constraint>専門用語を適切に使用すること</constraint>
+      <constraint>要約に含める重要ポイントを明示すること</constraint>
+    </constraints>
+    <outputFormat>Text</outputFormat>
+  </details>
+</request>
+````
+
+### 活用事例５ . . . デバッグ支援タスク
+````markdown
+<request>
+  <language>JavaScript</language>
+  <task>コードデバッグ</task>
+  <details>
+    <description>指定されたJavaScriptコードのバグを特定し、修正する方法を提案してください。</description>
+    <constraints>
+      <constraint>最適化のための追加改善案を含めること</constraint>
+      <constraint>動作確認のための簡易テストコードを提供すること</constraint>
+    </constraints>
+    <outputFormat>修正版のコードと説明</outputFormat>
+  </details>
+</request>
+````
+
+### 活用事例６ . . . アイデア創出タスク
+````markdown
+<request>
+  <language>Any</language>
+  <task>新製品アイデアの提案</task>
+  <details>
+    <description>家庭向けIoTデバイスの新しいアイデアを3つ提案してください。</description>
+    <constraints>
+      <constraint>環境に配慮したデザインを考慮すること</constraint>
+      <constraint>低コストで製造可能な仕様を示すこと</constraint>
+    </constraints>
+    <outputFormat>箇条書きリスト</outputFormat>
+  </details>
+</request>
+````
+
+### 活用事例７ . . . 学習支援タスク
+````markdown
+<request>
+  <language>Japanese</language>
+  <task>漢字練習問題の作成</task>
+  <details>
+    <description>小学3年生向けの漢字練習問題を10問作成してください。</description>
+    <constraints>
+      <constraint>読み方と書き方の両方を問う形式であること</constraint>
+      <constraint>回答例を含めること</constraint>
+    </constraints>
+    <outputFormat>テキスト形式</outputFormat>
+  </details>
+</request>
+````
+
+### 活用事例８ . . . 創作タスク
+````markdown
+<request>
+  <language>Japanese</language>
+  <task>短編小説のプロット作成</task>
+  <details>
+    <description>ミステリージャンルの短編小説のプロットを3段階構成で作成してください。</description>
+    <constraints>
+      <constraint>予想外の展開を盛り込むこと</constraint>
+      <constraint>主要登場人物を3人以内に絞ること</constraint>
+    </constraints>
+    <outputFormat>プロット形式</outputFormat>
+  </details>
+</request>
+````
+
+</details>
 
 #### タグ
 `#構造化プロンプト` `#タスク実行` `#出力フォーマット指定` 
@@ -315,6 +447,123 @@ for num in range(1, 101):
 # 注意事項
   - 指定する制約条件やフォーマットが曖昧だと、期待した回答が得られない可能性がある。
 --------------------------------------------------------------------------------------------------------------------
+````
+
+</details>
+<details>
+  <summary>プロンプトテンプレート活用事例集</summary>
+
+### 活用事例１ . . . プログラム生成タスク
+````markdown
+{
+  "language": "Python",
+  "task": "FizzBuzz",
+  "description": "1から100までの数字を出力するFizzBuzzプログラムを作成してください。3の倍数のときは\"Fizz\"、5の倍数のときは\"Buzz\"、3と5の両方の倍数のときは\"FizzBuzz\"を出力してください。",
+  "constraints": [
+    "ループを使用すること",
+    "関数を使用しないこと",
+    "エラーハンドリングは不要"
+  ],
+  "outputFormat": "Pythonスクリプト"
+}
+````
+
+### 活用事例２ . . . データ変換タスク
+````markdown
+{
+  "language": "Python",
+  "task": "CSVデータ変換",
+  "description": "指定されたCSVファイルを読み込み、各行をJSON形式に変換して保存してください。",
+  "constraints": [
+    "CSVの各列にヘッダーが含まれていること",
+    "出力ファイル名は'output.json'とすること"
+  ],
+  "outputFormat": "JSONファイル"
+}
+````
+
+### 活用事例３ . . . 文書生成タスク
+````markdown
+{
+  "language": "Japanese",
+  "task": "プレゼンテーションスライド作成",
+  "description": "指定されたトピックについて、3つのスライドの要約を作成してください。",
+  "constraints": [
+    "1スライドに要点を3つだけ記載すること",
+    "専門用語は簡単に説明すること"
+  ],
+  "outputFormat": "スライドテキスト"
+}
+````
+
+### 活用事例４ . . . 顧客対応タスク
+````markdown
+{
+  "language": "Japanese",
+  "task": "FAQ作成",
+  "description": "顧客からよくある質問を基に、FAQページの質問と回答を作成してください。",
+  "constraints": [
+    "質問は5つ以上、回答は簡潔でわかりやすいものにすること",
+    "業界特有の用語は避けること"
+  ],
+  "outputFormat": "FAQページのテキスト"
+}
+````
+
+### 活用事例５ . . . データ分析タスク
+````markdown
+{
+  "language": "Python",
+  "task": "データ集計",
+  "description": "CSVファイルのデータを読み込み、各カテゴリごとの平均を計算してください。",
+  "constraints": [
+    "データは数値のみとすること",
+    "出力結果はCSV形式で保存すること"
+  ],
+  "outputFormat": "CSVファイル"
+}
+````
+
+### 活用事例６ . . . レポート作成タスク
+````markdown
+{
+  "language": "Japanese",
+  "task": "レポート作成",
+  "description": "指定されたデータを基に、業績分析レポートを作成してください。",
+  "constraints": [
+    "グラフや表を含めること",
+    "レポートは1000字程度にまとめること"
+  ],
+  "outputFormat": "レポート文書"
+}
+````
+
+### 活用事例７ . . . 自然言語処理タスク
+````markdown
+{
+  "language": "Python",
+  "task": "テキスト分類",
+  "description": "指定されたテキストデータを使い、感情分析を行ってください。",
+  "constraints": [
+    "分類結果はポジティブ、ネガティブ、ニュートラルの3分類であること",
+    "NLPライブラリは`NLTK`を使用すること"
+  ],
+  "outputFormat": "分類結果のJSON"
+}
+````
+
+### 活用事例８ . . . Web開発タスク
+````markdown
+{
+  "language": "JavaScript",
+  "task": "Webフォーム作成",
+  "description": "ユーザー情報を入力するWebフォームを作成し、送信ボタンを押した際にその情報をコンソールに表示する機能を追加してください。",
+  "constraints": [
+    "HTMLとJavaScriptで作成すること",
+    "入力項目には名前、メールアドレス、年齢を含めること"
+  ],
+  "outputFormat": "HTMLファイル"
+}
 ````
 
 </details>
@@ -532,6 +781,144 @@ for ($i = 1; $i -le 100; $i++) {
 ````
 
 </details>
+<details>
+  <summary>プロンプトテンプレート活用事例集</summary>
+
+### 活用事例１ . . . 基本的なアルゴリズム問題の練習
+````markdown
+**タスク:** 配列の最大値を求めるプログラムを作成してください。
+
+**説明:**  
+与えられた整数配列の中から、最大値を見つけ出し、それを出力してください。  
+
+* 配列の要素はすべて正の整数とします。  
+* 配列は空でないものとします。  
+
+**制約:**  
+* 関数を1つ使用すること。  
+* 配列のソートは禁止。  
+
+**出力形式:** Pythonコード
+````
+
+### 活用事例２ . . . 特定条件のデータフィルタリング
+````markdown
+**タスク:** 顧客データから特定条件を満たす情報を抽出してください。
+
+**説明:**  
+以下の条件に基づき、顧客データをフィルタリングしてください。  
+
+* 年齢が30歳以上  
+* 地域が"東京"  
+* 購入額が10万円以上  
+
+**制約:**  
+* pandasライブラリを使用すること。  
+* 元データを直接変更しないこと。  
+
+**出力形式:** Pythonコード
+````
+
+### 活用事例３ . . . ログ解析タスク
+````markdown
+**タスク:** WebサーバーログからIPアドレスの出現頻度を解析してください。
+
+**説明:**  
+サーバーログファイルを読み込み、各IPアドレスの出現頻度をカウントして、頻度順にソートして表示してください。  
+
+* ログ形式はApacheの標準形式とする。  
+
+**制約:**  
+* 標準ライブラリのみを使用すること。  
+* ソートは降順で行うこと。  
+
+**出力形式:** Pythonコード
+````
+
+### 活用事例４ . . . データ可視化
+````markdown
+**タスク:** 売上データの月ごとの推移をグラフ化してください。
+
+**説明:**  
+与えられたCSV形式の売上データを読み込み、月ごとの売上推移を折れ線グラフで可視化してください。  
+
+* 横軸は月、縦軸は売上金額  
+* データには一部欠損値が含まれる可能性があります  
+
+**制約:**  
+* matplotlibライブラリを使用すること。  
+* 欠損値はゼロとして扱うこと。  
+
+**出力形式:** Pythonコード
+````
+
+### 活用事例５ . . . テキスト処理
+````markdown
+**タスク:** テキストから特定の単語を含む行を抽出してください。
+
+**説明:**  
+入力されたテキストデータの中から、特定の単語を含む行をすべて抽出し、新しいファイルに出力してください。  
+
+* 特定の単語は"エラー"とします。  
+
+**制約:**  
+* ファイルの読み書きは標準ライブラリで行うこと。  
+* 正規表現を使用すること。  
+
+**出力形式:** Pythonコード
+````
+
+### 活用事例６ . . . データ前処理
+````markdown
+**タスク:** 数値データの正規化を行うプログラムを作成してください。
+
+**説明:**  
+与えられた数値データを0から1の範囲に正規化してください。  
+
+* データはリスト形式で提供されるものとします。  
+
+**制約:**  
+* numpyライブラリを使用すること。  
+* 元データを直接変更しないこと。  
+
+**出力形式:** Pythonコード
+````
+
+### 活用事例７ . . . API利用タスク
+````markdown
+**タスク:** 天気予報データを取得して表示してください。
+
+**説明:**  
+指定された都市の天気予報データをAPIを利用して取得し、以下の情報を表示してください。  
+
+* 気温  
+* 湿度  
+* 天候  
+
+**制約:**  
+* requestsライブラリを使用すること。  
+* APIキーは環境変数から取得すること。  
+
+**出力形式:** Pythonコード
+````
+
+### 活用事例８ . . . ファイル操作
+````markdown
+**タスク:** 複数のテキストファイルを結合してください。
+
+**説明:**  
+指定されたディレクトリ内にあるすべてのテキストファイルを結合し、1つのファイルにまとめて保存してください。  
+
+* 出力ファイル名は"merged.txt"とします。  
+
+**制約:**  
+* サブディレクトリ内のファイルは対象外とする。  
+* ファイル内容を読み込む際にエンコーディングエラーを処理すること。  
+
+**出力形式:** Pythonコード
+````
+
+</details> 
 
 #### タグ
 `#構造化プロンプト` `#YAML形式` `#コード生成` `#タスク指示`
