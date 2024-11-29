@@ -953,76 +953,81 @@ for ($i = 1; $i -le 100; $i++) {
 <details>
   <summary>プロンプトテンプレート活用事例集</summary>
 
+## プロンプトテンプレート活用事例集
+
 ### 活用事例１ . . . コーディングタスク
 ````markdown
 ```yaml
-language: PowerShell
-task: FizzBuzz
+language: Python
+task: フィボナッチ数列
 description: |
-  1から100までの数字を出力するFizzBuzzプログラムを作成してください。
-  3の倍数のときは"Fizz"、5の倍数のときは"Buzz"、3と5の両方の倍数のときは"FizzBuzz"を出力してください。
+  フィボナッチ数列の最初の20項を出力するプログラムを作成してください。
+  フィボナッチ数列は、最初の2項が0と1で、それ以降の項は前の2項の合計となります。
 constraints:
   - ループを使用すること
-  - 関数を使用しないこと
-outputFormat: PowerShellスクリプト
-```
-````
-
-### 活用事例２ . . . データ処理タスク
-````markdown
-```yaml
-language: Python
-task: DataProcessing
-description: |
-  CSVファイルからデータを読み込み、指定された列に対して平均値を計算してください。
-  結果を新しいCSVファイルとして保存してください。
-constraints:
-  - pandasライブラリを使用
-  - 出力ファイルの名前は「processed_data.csv」
+  - 再帰を使用しないこと
 outputFormat: Pythonスクリプト
 ```
 ````
 
-### 活用事例３ . . . レポート作成タスク
+### 活用事例２ . . . データ分析タスク
 ````markdown
 ```yaml
-language: Python
-task: ReportGeneration
+language: R
+task: データ分析
 description: |
-  与えられたデータセットに基づいて、売上のトレンドを分析するレポートを作成してください。
-  レポートにはグラフと簡単な解説を含めてください。
+  次のデータを基に、売上の月別推移をグラフで表示してください。
+  データ: 2024/1 売上4000円, 2024/2 売上8000円, 2024/3 売上6000円, 2024/4 売上10000円
 constraints:
-  - matplotlibを使用してグラフを作成すること
-  - レポートはPDF形式で出力
-outputFormat: Pythonスクリプト
+  - グラフのタイトルを「月別売上推移」とすること
+  - グラフのX軸に月、Y軸に売上を表示すること
+outputFormat: Rスクリプト
 ```
 ````
 
-### 活用事例４ . . . 自然言語処理タスク
+### 活用事例３ . . . ドキュメント作成タスク
 ````markdown
 ```yaml
-language: Python
-task: TextSummarization
+language: Markdown
+task: レポート作成
 description: |
-  与えられた記事の要約を作成してください。重要なポイントを簡潔にまとめてください。
+  次のデータを基に、業績分析レポートを作成してください。
+  データ: 2024/1 売上4000円, 2024/2 売上8000円, 2024/3 売上6000円, 2024/4 売上10000円
 constraints:
-  - Hugging Face Transformersライブラリを使用
-  - 出力はJSON形式で提供
-outputFormat: Pythonスクリプト
+  - レポートには売上の月別推移グラフを含めること
+  - レポートのタイトルを「2024年業績分析レポート」とすること
+outputFormat: Markdownファイル
 ```
 ````
 
-### 活用事例５ . . . API統合タスク
+### 活用事例４ . . . 翻訳タスク
 ````markdown
 ```yaml
-language: JavaScript
-task: APIIntegration
+language: 日本語
+task: 翻訳
 description: |
-  RESTful APIからデータを取得し、HTMLページに表示するJavaScriptコードを作成してください。
+  次の英文を日本語に翻訳してください。
+  英文: "The quick brown fox jumps over the lazy dog."
 constraints:
-  - Fetch APIを使用
-  - APIエラーハンドリングを行うこと
-outputFormat: JavaScriptコード
+  - 翻訳は自然な日本語で行うこと
+  - 翻訳文の文法や表現に注意すること
+outputFormat: 翻訳文
+```
+````
+
+### 活用事例５ . . . データベース操作タスク
+````markdown
+```yaml
+language: SQL
+task: データベース操作
+description: |
+  次のテーブルから、売上が@@@円以上のレコードを抽出してください。
+  テーブル名: sales
+  カラム: id, date, amount
+constraints:
+  - SQLクエリを使用すること
+  - 結果を売上の高い順にソートすること
+outputFormat: SQLクエリ
 ```
 ````
 
@@ -1030,40 +1035,42 @@ outputFormat: JavaScriptコード
 ````markdown
 ```yaml
 language: Python
-task: WebScraping
+task: ウェブスクレイピング
 description: |
-  指定されたウェブサイトからニュース記事のタイトルを取得し、CSVファイルに保存してください。
+  @@@のウェブサイトから、最新のニュース記事のタイトルとURLを取得してください。
 constraints:
-  - BeautifulSoupライブラリを使用
-  - 出力は「news_titles.csv」として保存
+  - BeautifulSoupライブラリを使用すること
+  - 取得したデータをリスト形式で出力すること
 outputFormat: Pythonスクリプト
 ```
 ````
 
-### 活用事例７ . . . システム管理タスク
-````markdown
-```yaml
-language: PowerShell
-task: SystemInfo
-description: |
-  システムの情報（OSバージョン、CPU、メモリ使用量）を取得し、ログファイルに記録してください。
-constraints:
-  - PowerShellのGet-Commandを使用
-  - 出力ファイルは「system_info.log」
-outputFormat: PowerShellスクリプト
-```
-````
-
-### 活用事例８ . . . テキスト変換タスク
+### 活用事例７ . . . 機械学習タスク
 ````markdown
 ```yaml
 language: Python
-task: TextConversion
+task: 機械学習
 description: |
-  与えられたテキストファイルを、全て小文字に変換して新しいファイルに保存してください。
+  次のデータセットを使用して、単純な線形回帰モデルを作成してください。
+  データセット: 2024/1 売上4000円, 2024/2 売上8000円, 2024/3 売上6000円, 2024/4 売上10000円
 constraints:
-  - 出力ファイル名は「lowercase_text.txt」
-  - 文字エンコードはUTF-8
+  - scikit-learnライブラリを使用すること
+  - モデルの評価指標としてR²スコアを出力すること
+outputFormat: Pythonスクリプト
+```
+````
+
+### 活用事例８ . . . 自動化タスク
+````markdown
+```yaml
+language: Python
+task: 自動化
+description: |
+  次のファイルを自動的にバックアップしてください。
+  ファイルパス: /path/to/@@@.txt
+constraints:
+  - バックアップ先のディレクトリを/path/to/backupとすること
+  - バックアップファイル名にタイムスタンプを含めること
 outputFormat: Pythonスクリプト
 ```
 ````
