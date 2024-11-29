@@ -225,133 +225,141 @@ process_json(input_file, output_file)
 ````
 
 </details>
-<details>  
+<details>
   <summary>プロンプトテンプレート活用事例集</summary>
 
-### 活用事例１ . . . コード生成タスク
+### 活用事例１ . . . Pythonでの機械学習モデルのデータ前処理
 ````markdown
 <request>
   <language>Python</language>
-  <task>ファイル操作プログラムの作成</task>
+  <task>顧客データの機械学習前処理</task>
   <details>
-    <description>指定されたディレクトリ内のすべてのテキストファイルを読み取り、内容を1つのファイルに統合するPythonプログラムを作成してください。</description>
+    <description>@@@銀行の顧客データセットから、年齢、収入、ローン返済履歴を用いて、機械学習モデルの入力に適したデータ前処理を行ってください。</description>
     <constraints>
-      <constraint>標準ライブラリのみを使用すること</constraint>
-      <constraint>例外処理を実装すること</constraint>
+      <constraint>欠損値は中央値で補完すること</constraint>
+      <constraint>収入は対数変換を行うこと</constraint>
+      <constraint>カテゴリカル変数はone-hot encodingすること</constraint>
     </constraints>
-    <outputFormat>Pythonコード</outputFormat>
+    <outputFormat>前処理済みのPandasデータフレーム</outputFormat>
   </details>
 </request>
 ````
 
-### 活用事例２ . . . ドキュメント生成タスク
+### 活用事例２ . . . Webスクレイピングのスクリプト作成
 ````markdown
 <request>
-  <language>Markdown</language>
-  <task>マニュアルの概要作成</task>
+  <language>Python</language>
+  <task>@@@オンラインショップの価格情報収集</task>
   <details>
-    <description>プロジェクト管理ツールの利用方法を簡潔に説明するMarkdown形式のマニュアルを作成してください。</description>
+    <description>@@@の電子機器販売ウェブサイトから、スマートフォン3機種の現在の価格と在庫状況を収集してください。</description>
     <constraints>
-      <constraint>見出し構造（H1, H2, H3）を適切に使用すること</constraint>
-      <constraint>サンプル画像やリンクを含めること</constraint>
+      <constraint>BeautifulSoupライブラリを使用すること</constraint>
+      <constraint>価格と在庫情報を辞書形式で出力すること</constraint>
+      <constraint>スクレイピング間隔は3秒以上空けること</constraint>
     </constraints>
-    <outputFormat>Markdownテキスト</outputFormat>
+    <outputFormat>JSON形式の価格と在庫データ</outputFormat>
   </details>
 </request>
 ````
 
-### 活用事例３ . . . データ変換タスク
+### 活用事例３ . . . データ分析レポートの自動作成
 ````markdown
 <request>
-  <language>SQL</language>
-  <task>データの集計クエリ作成</task>
+  <language>Python</language>
+  <task>@@@企業の四半期売上分析レポート</task>
   <details>
-    <description>データベース内の売上データを月ごとに集計し、最高売上月を特定するSQLクエリを作成してください。</description>
+    <description>2024年第1四半期の@@@テクノロジー社の部門別売上データを分析し、詳細なレポートを作成してください。</description>
     <constraints>
-      <constraint>ANSI SQLに準拠すること</constraint>
-      <constraint>エラーハンドリングを考慮すること</constraint>
+      <constraint>売上の対前年同期比を計算すること</constraint>
+      <constraint>部門ごとの売上構成比をグラフ化すること</constraint>
+      <constraint>売上傾向の統計的分析を含めること</constraint>
     </constraints>
-    <outputFormat>SQLクエリ</outputFormat>
+    <outputFormat>Markdownフォーマットの分析レポート</outputFormat>
   </details>
 </request>
 ````
 
-### 活用事例４ . . . レポート生成タスク
+### 活用事例４ . . . APIを用いたデータ統合
 ````markdown
 <request>
-  <language>English</language>
-  <task>レポートの要約作成</task>
+  <language>Python</language>
+  <task>複数APIからの天気データ統合</task>
   <details>
-    <description>提供されたレポート内容を300ワード以内で要約し、簡潔に伝わる形で記述してください。</description>
+    <description>@@@気象庁と@@@天気予報サービスのAPIから、東京の今後5日間の天気予報データを取得し、統合してください。</description>
     <constraints>
-      <constraint>専門用語を適切に使用すること</constraint>
-      <constraint>要約に含める重要ポイントを明示すること</constraint>
+      <constraint>両APIからのレスポンスを統一フォーマットに変換すること</constraint>
+      <constraint>気温、降水確率、風速を必須項目とすること</constraint>
+      <constraint>エラーハンドリングを実装すること</constraint>
     </constraints>
-    <outputFormat>Text</outputFormat>
+    <outputFormat>統合された天気予報データのJSONファイル</outputFormat>
   </details>
 </request>
 ````
 
-### 活用事例５ . . . デバッグ支援タスク
+### 活用事例５ . . . 自然言語処理のテキスト前処理
 ````markdown
 <request>
-  <language>JavaScript</language>
-  <task>コードデバッグ</task>
+  <language>Python</language>
+  <task>顧客レビューテキストの前処理</task>
   <details>
-    <description>指定されたJavaScriptコードのバグを特定し、修正する方法を提案してください。</description>
+    <description>@@@ホテル予約サイトから収集した1000件の顧客レビューテキストを、自然言語処理用に前処理してください。</description>
     <constraints>
-      <constraint>最適化のための追加改善案を含めること</constraint>
-      <constraint>動作確認のための簡易テストコードを提供すること</constraint>
+      <constraint>全角/半角の統一を行うこと</constraint>
+      <constraint>絵文字と特殊記号を削除すること</constraint>
+      <constraint>形態素解析を実行し、名詞と動詞のみを抽出すること</constraint>
     </constraints>
-    <outputFormat>修正版のコードと説明</outputFormat>
+    <outputFormat>前処理済みテキストのリスト</outputFormat>
   </details>
 </request>
 ````
 
-### 活用事例６ . . . アイデア創出タスク
+### 活用事例６ . . . データベース操作スクリプト
 ````markdown
 <request>
-  <language>Any</language>
-  <task>新製品アイデアの提案</task>
+  <language>Python</language>
+  <task>SQLiteデータベースの顧客情報管理</task>
   <details>
-    <description>家庭向けIoTデバイスの新しいアイデアを3つ提案してください。</description>
+    <description>@@@オンラインショップの顧客情報データベースにおいて、2024年1月から3月に登録された新規顧客の情報を抽出し、分析してください。</description>
     <constraints>
-      <constraint>環境に配慮したデザインを考慮すること</constraint>
-      <constraint>低コストで製造可能な仕様を示すこと</constraint>
+      <constraint>SQLiteデータベースを使用すること</constraint>
+      <constraint>20~35歳の顧客のみを対象とすること</constraint>
+      <constraint>平均購入金額と購入頻度を計算すること</constraint>
     </constraints>
-    <outputFormat>箇条書きリスト</outputFormat>
+    <outputFormat>分析結果のPandasデータフレーム</outputFormat>
   </details>
 </request>
 ````
 
-### 活用事例７ . . . 学習支援タスク
+### 活用事例７ . . . クラウドストレージ連携スクリプト
 ````markdown
 <request>
-  <language>Japanese</language>
-  <task>漢字練習問題の作成</task>
+  <language>Python</language>
+  <task>@@@クラウドストレージのファイル管理</task>
   <details>
-    <description>小学3年生向けの漢字練習問題を10問作成してください。</description>
+    <description>@@@ドライブから過去3ヶ月の請求書PDFファイルを自動でダウンロードし、指定のローカルフォルダに整理して保存してください。</description>
     <constraints>
-      <constraint>読み方と書き方の両方を問う形式であること</constraint>
-      <constraint>回答例を含めること</constraint>
+      <constraint>ファイル名を「年月_請求書.pdf」の形式でリネームすること</constraint>
+      <constraint>重複ファイルは上書きしないこと</constraint>
+      <constraint>ダウンロードの進行状況をコンソールに表示すること</constraint>
     </constraints>
-    <outputFormat>テキスト形式</outputFormat>
+    <outputFormat>ダウンロードされたファイルのリスト</outputFormat>
   </details>
 </request>
 ````
 
-### 活用事例８ . . . 創作タスク
+### 活用事例８ . . . 金融データの時系列分析
 ````markdown
 <request>
-  <language>Japanese</language>
-  <task>短編小説のプロット作成</task>
+  <language>Python</language>
+  <task>@@@株式の時系列データ分析</task>
   <details>
-    <description>ミステリージャンルの短編小説のプロットを3段階構成で作成してください。</description>
+    <description>2023年1月から2024年3月までの@@@テクノロジー企業の株価データを用いて、移動平均線と売買シグナルを分析してください。</description>
     <constraints>
-      <constraint>予想外の展開を盛り込むこと</constraint>
-      <constraint>主要登場人物を3人以内に絞ること</constraint>
+      <constraint>50日と200日の移動平均線を計算すること</constraint>
+      <constraint>ゴールデンクロスとデッドクロスのポイントを特定すること</constraint>
+      <constraint>結果を可視化するグラフを作成すること</constraint>
     </constraints>
-    <outputFormat>プロット形式</outputFormat>
+    <outputFormat>分析結果と可視化グラフを含むJupyterノートブック</outputFormat>
   </details>
 </request>
 ````
