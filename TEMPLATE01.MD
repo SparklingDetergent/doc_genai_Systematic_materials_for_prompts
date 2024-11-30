@@ -2459,71 +2459,71 @@ I would appreciate it if you could share the report with me.
 ````markdown
 以下の指示に従い、指定された形式で出力してください。
 
-- 出力形式はJSON形式で、フィールド名は「todaydate」にしてください。
-- 例: 日付をYYYY-MM-DD形式で「todaydate」フィールドに格納してください。
+- 出力形式はJSON形式で、フィールド名は「todaydate」「dayOfWeek」「month」にしてください。
+- 例: 日付をYYYY-MM-DD形式で「todaydate」フィールドに、曜日を「dayOfWeek」フィールドに、月を「month」フィールドに格納してください。
 
 ````
 
-### 活用事例２ . . . 時刻のJSON出力
+### 活用事例２ . . . 時刻のXML出力
 ````markdown
 以下の指示に従い、指定された形式で出力してください。
 
-- 出力形式はJSON形式で、フィールド名は「currentTime」にしてください。
-- 例: 時刻をHH:MM:SS形式で「currentTime」フィールドに格納してください。
+- 出力形式はXML形式で、タグ名は「currentTime」「hour」「minute」「second」にしてください。
+- 例: 時刻をHH:MM:SS形式で「currentTime」タグに、時を「hour」タグに、分を「minute」タグに、秒を「second」タグに格納してください。
 
 ````
 
-### 活用事例３ . . . 天気情報のJSON出力
+### 活用事例３ . . . 天気情報のCSV出力
 ````markdown
 以下の指示に従い、指定された形式で出力してください。
 
-- 出力形式はJSON形式で、フィールド名は「weather」にしてください。
-- 例: 天気情報を「weather」フィールドに格納してください。
+- 出力形式はCSV形式で、フィールド名は「weather」「temperature」「humidity」にしてください。
+- 例: 天気情報を「weather」フィールドに、気温を「temperature」フィールドに、湿度を「humidity」フィールドに格納してください。
 
 ````
 
-### 活用事例４ . . . 株価情報のJSON出力
+### 活用事例４ . . . 株価情報のYAML出力
 ````markdown
 以下の指示に従い、指定された形式で出力してください。
 
-- 出力形式はJSON形式で、フィールド名は「stockPrice」にしてください。
-- 例: @@@の株価情報を「stockPrice」フィールドに格納してください。
+- 出力形式はYAML形式で、フィールド名は「stockPrice」「companyName」「marketCap」にしてください。
+- 例: @@@の株価情報を「stockPrice」フィールドに、会社名を「companyName」フィールドに、時価総額を「marketCap」フィールドに格納してください。
 
 ````
 
-### 活用事例５ . . . ニュース記事のJSON出力
+### 活用事例５ . . . ニュース記事のMarkdown出力
 ````markdown
 以下の指示に従い、指定された形式で出力してください。
 
-- 出力形式はJSON形式で、フィールド名は「newsArticle」にしてください。
-- 例: 最新のニュース記事を「newsArticle」フィールドに格納してください。
+- 出力形式はMarkdown形式で、フィールド名は「newsArticle」「title」「author」「date」にしてください。
+- 例: 最新のニュース記事を「newsArticle」フィールドに、タイトルを「title」フィールドに、著者を「author」フィールドに、日付を「date」フィールドに格納してください。
 
 ````
 
-### 活用事例６ . . . ユーザー情報のJSON出力
+### 活用事例６ . . . ユーザー情報のHTML出力
 ````markdown
 以下の指示に従い、指定された形式で出力してください。
 
-- 出力形式はJSON形式で、フィールド名は「userInfo」にしてください。
-- 例: ユーザーの基本情報を「userInfo」フィールドに格納してください。
+- 出力形式はHTML形式で、タグ名は「userInfo」「name」「email」「age」にしてください。
+- 例: ユーザーの基本情報を「userInfo」タグに、名前を「name」タグに、メールアドレスを「email」タグに、年齢を「age」タグに格納してください。
 
 ````
 
-### 活用事例７ . . . イベント情報のJSON出力
+### 活用事例７ . . . イベント情報のテキスト出力
 ````markdown
 以下の指示に従い、指定された形式で出力してください。
 
-- 出力形式はJSON形式で、フィールド名は「eventDetails」にしてください。
-- 例: 今日のイベント情報を「eventDetails」フィールドに格納してください。
+- 出力形式はテキスト形式で、フィールド名は「eventDetails」「eventName」「eventDate」「location」にしてください。
+- 例: 今日のイベント情報を「eventDetails」フィールドに、イベント名を「eventName」フィールドに、イベント日を「eventDate」フィールドに、場所を「location」フィールドに格納してください。
 
 ````
 
-### 活用事例８ . . . 交通情報のJSON出力
+### 活用事例８ . . . 交通情報のTSV出力
 ````markdown
 以下の指示に従い、指定された形式で出力してください。
 
-- 出力形式はJSON形式で、フィールド名は「trafficInfo」にしてください。
-- 例: 現在の交通情報を「trafficInfo」フィールドに格納してください。
+- 出力形式はTSV形式で、フィールド名は「trafficInfo」「roadName」「congestionLevel」「incidentDetails」にしてください。
+- 例: 現在の交通情報を「trafficInfo」フィールドに、道路名を「roadName」フィールドに、渋滞レベルを「congestionLevel」フィールドに、事故詳細を「incidentDetails」フィールドに格納してください。
 
 ````
 
